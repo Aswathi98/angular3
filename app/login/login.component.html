@@ -1,0 +1,28 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <a href="#">
+      <img src="../../assets/images/iSpaceLogo.png" class="imgLogo" width=130px height=70px>
+    </a>
+    <br>
+    <h2 class="heading" style="font-size: 32px;">Login</h2>
+    <!-- Login Form -->
+    <form (ngSubmit)=onSubmit(f) #f=ngForm>
+      <div class="text-danger" *ngIf="err && err !=''">{{err}}</div>
+      <label class="label" >Username<span style="color: red;">*</span></label>
+      <input required #username="ngModel"  type="text"  class="fadeIn third"  name="login"  ngModel>
+      <div *ngIf="username.invalid && username.touched"  class="alert alert-danger" style="margin-left: 0px;">Employee Id required</div>
+      <label class="label">Password<span style="color: red;">*</span></label>
+      <input required #password="ngModel"  type="password"  class="fadeIn third"  name="password"  ngModel>
+      <div *ngIf="password.invalid && password.touched"  class="alert alert-danger">Password required</div>
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+  </div>
+</div>
